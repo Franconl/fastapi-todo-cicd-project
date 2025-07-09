@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, status
 from typing import List
 from app.models import Task
 
-app = FastAPI(title = "FastAPI TODO APP", version = "1.0.0")
+app = FastAPI(title = "FastAPI TODO APP", version = "1.0.1", description "Ahora con CI/CD")
 
 #almacenamiento en memoria
 task_db: List[Task] = []
