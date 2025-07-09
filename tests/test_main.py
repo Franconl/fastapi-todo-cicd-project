@@ -1,10 +1,10 @@
 from fastapi.testclient import TestClient
-from app.main import app, tasks_db # Importa app y tasks_db para poder limpiar el estado
+from app.main import app # Importa app y tasks_db para poder limpiar el estado
 
 client = TestClient(app)
 
 def setup_function():
-    tasks_db.clear()
+    app.tasks_db.clear()
 
 def test_read_root():
     response = client.get("/")
