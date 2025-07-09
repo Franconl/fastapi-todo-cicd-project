@@ -47,8 +47,8 @@ pipeline{
                 script {
                     // Ejecuta los tests unitarios dentro de un nuevo contenedor basado en la imagen que acabamos de construir.
                     // '--rm' asegura que el contenedor sea eliminado después de la ejecución.
-                    // 'pytest tests/test_main.py' es el comando para ejecutar tus tests.
-                    sh 'docker run --rm fastapi-todo-app pytest tests/test_main.py'
+                    // 'pytest tests/test_main.py' es el comando para ejecutar tus tests
+                    sh 'docker run --rm -e PYTHONPATH=/app fastapi-todo-app pytest tests/test_main.py'
                 }
             }
         }
